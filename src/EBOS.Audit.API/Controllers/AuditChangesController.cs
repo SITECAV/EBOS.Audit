@@ -8,6 +8,7 @@ namespace EBOS.Audit.Api.Controllers;
 [ApiController]
 [ApiVersion(1.0)]
 [Route("api/v{version:apiVersion}/audit/changes")]
+[Produces("application/json")]
 public sealed class AuditChangesController(AuditAppService service) : ControllerBase
 {
     [HttpPost]

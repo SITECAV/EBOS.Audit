@@ -35,7 +35,7 @@ public sealed class AuditChangeConfiguration : IEntityTypeConfiguration<AuditCha
         builder.HasIndex(a => new { a.SystemName, a.EntityName, a.EntityId })
             .HasDatabaseName("IX_AuditChange_Entity");
         builder.HasIndex(x => new { x.EntityName, x.EntityId, x.ChangedAt })
-            .HasDatabaseName("IX_AuditChange_ChangedAt");
+            .HasDatabaseName("IX_AuditChange_EntityName_EntityId_ChangedAt");
         builder.HasIndex(a => a.ChangedAt)
             .HasDatabaseName("IX_AuditChange_ChangedAt");
     }

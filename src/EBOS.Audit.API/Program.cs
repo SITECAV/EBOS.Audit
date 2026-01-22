@@ -1,14 +1,18 @@
 using Asp.Versioning;
 using EBOS.Audit.Application.Services;
+using EBOS.Audit.Infrastructure;
 using EBOS.Audit.Infrastructure.DI;
 
 var builder = WebApplication.CreateBuilder(args);
+var services = builder.Services;
+
+services.AddInfrastructure(builder.Configuration);
 
 // Controllers
-builder.Services.AddControllers();
+services.AddControllers();
 
 // CORS
-builder.Services.AddCors(options =>
+services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
     {
@@ -19,7 +23,7 @@ builder.Services.AddCors(options =>
 });
 
 // API Versioning (.NET 8 compatible)
-builder.Services.AddApiVersioning(options =>
+services.AddApiVersioning(options =>
     {
         options.DefaultApiVersion = new ApiVersion(1, 0);
         options.AssumeDefaultVersionWhenUnspecified = true;
@@ -32,14 +36,14 @@ builder.Services.AddApiVersioning(options =>
     });
 
 // Swagger
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+services.AddEndpointsApiExplorer();
+services.AddSwaggerGen();
 
 // Application Services
-builder.Services.AddScoped<AuditAppService>();
+services.AddScoped<AuditAppService>();
 
 // Infrastructure
-builder.Services.AddAuditInfrastructure(builder.Configuration);
+services.AddAuditInfrastructure(builder.Configuration);
 
 var app = builder.Build();
 

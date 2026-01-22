@@ -8,6 +8,7 @@ namespace EBOS.Audit.Api.Controllers;
 [ApiController]
 [ApiVersion(1.0)]
 [Route("api/v{version:apiVersion}/audit/events")]
+[Produces("application/json")]
 public sealed class DomainEventsController(AuditAppService service) : ControllerBase
 {
     [HttpPost]
