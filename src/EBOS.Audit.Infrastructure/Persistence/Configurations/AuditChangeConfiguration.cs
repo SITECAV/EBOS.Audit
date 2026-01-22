@@ -8,7 +8,7 @@ public sealed class AuditChangeConfiguration : IEntityTypeConfiguration<AuditCha
 {
     public void Configure(EntityTypeBuilder<AuditChange> builder)
     {
-        builder.ToTable("AuditChanges", "Audit");
+        builder.ToTable("AuditChanges", "dbo");
 
         builder.HasKey(a => a.Id);
 
