@@ -4,9 +4,6 @@ namespace EBOS.Audit.Domain.Entities;
 
 public sealed class DomainEventLog : BaseEntity
 {
-    // EF Core constructor
-
-    // Constructor privado para creación controlada
     private DomainEventLog(string systemName, string eventType, string entityName, string entityId, string payloadJson,
         DateTime occurredAt, string triggeredBy, string? correlationId)
     {
@@ -20,7 +17,7 @@ public sealed class DomainEventLog : BaseEntity
         CorrelationId = correlationId;
     }
 
-    // Factory estática: punto único de creación
+    // Static factory: single point of creation
     public static DomainEventLog Create(string systemName, string eventType, string entityName, string entityId,
         string payloadJson, DateTime occurredAt, string triggeredBy, string? correlationId = null)
         => new(systemName, eventType, entityName, entityId, payloadJson, occurredAt, triggeredBy, correlationId);
