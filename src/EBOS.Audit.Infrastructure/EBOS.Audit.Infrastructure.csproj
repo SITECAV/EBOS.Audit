@@ -25,4 +25,8 @@
       <ProjectReference Include="..\EBOS.Audit.Application\EBOS.Audit.Application.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Remove="Services\Queries\AuditQueryService.cs" />
+    </ItemGroup>
+
 </Project>

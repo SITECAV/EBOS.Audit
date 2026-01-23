@@ -23,4 +23,10 @@
       <ProjectReference Include="..\EBOS.Audit.Infrastructure\EBOS.Audit.Infrastructure.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Remove="Controllers\Queries\ActivityLogsQueryController.cs" />
+      <Compile Remove="Controllers\Queries\AuditChangesQueryController.cs" />
+      <Compile Remove="Controllers\Queries\DomainEventsQueryController.cs" />
+    </ItemGroup>
+
 </Project>

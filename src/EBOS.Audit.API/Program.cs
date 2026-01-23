@@ -67,7 +67,6 @@ services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOpti
 // Application Services
 // -----------------------------------------------------------------------------
 services.AddScoped<AuditAppService>();
-services.AddScoped<AuditQueryService>();
 services.AddScoped<AuditAggregationService>();
 // Retention settings
 services.Configure<AuditRetentionOptions>(configuration.GetSection("AuditRetention"));
