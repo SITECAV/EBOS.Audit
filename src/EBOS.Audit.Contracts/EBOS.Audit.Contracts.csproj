@@ -6,9 +6,4 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\EBOS.Audit.Client\EBOS.Audit.Client.csproj" />
-      <ProjectReference Include="..\EBOS.Audit.Domain\EBOS.Audit.Domain.csproj" />
-    </ItemGroup>
-
 </Project>

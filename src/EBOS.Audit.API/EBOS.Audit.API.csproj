@@ -7,6 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Asp.Versioning.Http" Version="8.1.1" />
         <PackageReference Include="Asp.Versioning.Mvc" Version="8.1.1" />
         <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="8.1.1" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.23"/>
@@ -20,6 +21,12 @@
     <ItemGroup>
       <ProjectReference Include="..\EBOS.Audit.Application\EBOS.Audit.Application.csproj" />
       <ProjectReference Include="..\EBOS.Audit.Infrastructure\EBOS.Audit.Infrastructure.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="Controllers\Queries\ActivityLogsQueryController.cs" />
+      <Compile Remove="Controllers\Queries\AuditChangesQueryController.cs" />
+      <Compile Remove="Controllers\Queries\DomainEventsQueryController.cs" />
     </ItemGroup>
 
 </Project>
